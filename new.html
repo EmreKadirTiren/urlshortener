@@ -1,0 +1,56 @@
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+</head>
+<body style="text-align: -webkit-center; padding-top:25px">
+
+<h3>Link shortening form</h3>
+
+<div class="container" style="width: 400px">
+  <form action="https://IdenticalFarflungTitles.shreygupta1.repl.co/link" method="POST">
+    <label for="fname">Short Link path</label>
+    <input type="text" id="fname" name="firstname" placeholder="github">
+
+    <label for="email">Long link</label>
+    <input type="text" id="email" name="email" placeholder="https://github.com">
+
+    <input type="submit" value="Shorten my link!">
+  </form>
+</div>
+
+
+
+</body>
