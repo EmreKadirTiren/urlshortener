@@ -1,0 +1,38 @@
+name: CI/CD Workflow
+
+on:
+  push:
+    branches:
+      - main  # Adjust branch name as needed
+  pull_request:
+    branches:
+      - main  # Adjust branch name as needed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build and test
+        run: npm test  # Replace with your actual test command if applicable
+      
+      - name: Deploy to Replit
+        env:
+          REPLIT_URL: https://IdenticalFarflungTitles.shreygupta1.repl.co  # Replace with your Replit URL
+        run: |
+          curl -X POST $REPLIT_URL/link \
+            -H "Content-Type: application/json" \
+            -d '{
+              "shortPath": "github",
+              "longLink": "https://github.com"
+            }'
+
+      - name: Check deployment status
+        run: curl -I $REPLIT_URL  # Check if the server responds
+
